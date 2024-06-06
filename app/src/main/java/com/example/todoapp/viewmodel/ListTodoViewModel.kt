@@ -42,7 +42,7 @@ class ListTodoViewModel(application: Application)
                 getApplication()
             )
 
-            db.todoDao().deleteTodo(todo)
+            db.todoDao().markTodoAsDone(todo.uuid)
 
             todoLD.postValue(db.todoDao().selectAllTodo())
         }
